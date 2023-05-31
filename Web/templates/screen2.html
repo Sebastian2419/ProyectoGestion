@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Datos del archivo Excel</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Datos del archivo Excel cargados:</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Temporada</th>
+                <th>Fecha</th>
+                <th>Equipo_local</th>
+                <th>Equipo_visitante</th>
+                <th>Goles_local</th>
+                <th>Goles_visitante</th>
+                <th>Ganador</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for deportes in sports %}
+                <tr>
+                    <td>{{ deportes.temporada }}</td>
+                    <td>{{ deportes.fecha }}</td>
+                    <td>{{ deportes.equipo_local }}</td>
+                    <td>{{ deportes.equipo_visitante }}</td>
+                    <td>{{ deportes.goles_local }}</td>
+                    <td>{{ deportes.goles_visitante }}</td>
+                    <td>{{ deportes.ganador }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
